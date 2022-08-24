@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Grid from '../Grid';
 import * as C from './styles';
 
@@ -11,10 +13,26 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
 
     const handleSave = () => {
         if (!desc || !amount) {
-            alert("Informe a descrição e o valor!")
+            toast.warning("Informe a descrição e o valor!", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             return;
         } else if (amount < 1) {
-            alert("O valor deve ser positivo!")
+            toast.warning("O valor deve ser positivo!", {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             return;
         }
 
@@ -62,6 +80,7 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
                     <C.Label htmlFor="rExpenses" >Saída</C.Label>
                 </C.RadioGroup>
                 <C.Button onClick={handleSave}>ADICIONAR</C.Button>
+                <ToastContainer />
             </C.Container>
             <Grid itens={transactionsList} setItens={setTransactionsList} />
         </>
