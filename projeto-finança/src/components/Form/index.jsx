@@ -21,6 +21,7 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
+                theme: "colored",
             });
             return;
         } else if (amount < 1) {
@@ -32,6 +33,7 @@ const Form = ({ handleAdd, transactionsList, setTransactionsList }) => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
+                theme: "colored",
             });
             return;
         }
