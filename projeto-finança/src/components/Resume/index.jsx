@@ -7,7 +7,7 @@ const Resume = ({ income, expense, total }) => {
     return (
         <C.Container>
             <ResumeItem color='green' Title="Entradas" Icon={FaRegArrowAltCircleUp} value={income}/>
-            <ResumeItem color='red' Title="Saída" Icon={FaRegArrowAltCircleDown} value={expense}/>
+            <ResumeItem color='red' Title="Saídas" Icon={FaRegArrowAltCircleDown} value={expense}/>
             <ResumeItem color='gold' Title="Total" Icon={FaDollarSign} value={total} />
         </C.Container>
     )
